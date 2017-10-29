@@ -17,5 +17,8 @@
     "no-unexpected-multiline": 2,
     "compat/compat": 2,
     "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }]
+  },
+  "settings": {
+  "polyfills": ["fetch"]
   }
 }
