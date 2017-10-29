@@ -1,0 +1,11 @@
+{
+  "name": "js_stack_from_scratch_v2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:UHanczar/js_stack_from_scratch_v2.git",
+  "author": "UHanczar <u.hanczar@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  }
+}
