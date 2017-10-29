@@ -8,12 +8,14 @@
     "compat"
   ],
   "env": {
+    "browser": true,
     "jest": true
   },
   "parser": "babel-eslint",
   "rules": {
     "linebreak-style": [0, "unix"],
     "no-unexpected-multiline": 2,
-    "compat/compat": 2
+    "compat/compat": 2,
+    "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }]
   }
 }

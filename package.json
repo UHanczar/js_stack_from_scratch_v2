@@ -6,10 +6,11 @@
   "author": "UHanczar <u.hanczar@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prod:build": "rimraf lib && babel src -d lib --ignore .test.js",
+    "prod:build": "rimraf lib dist && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
     "prod:start": "cross-env NODE_ENV=production pm2 start lib/server && pm2 logs",
     "prod:stop": "pm2 delete server",
-    "dev:start": "nodemon --ignore lib --exec babel-node src/server",
+    "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
+    "dev:wds": "webpack-dev-server --progress",
     "start": "yarn dev:start",
     "lint": "eslint src && flow",
     "test": "jest --coverage",
@@ -21,10 +22,14 @@
   ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-flow-react-proptypes": "^7.0.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
     "cross-env": "^5.1.1",
     "eslint": "^4.10.0",
     "eslint-config-airbnb": "^16.1.0",
@@ -38,10 +43,16 @@
     "jest": "^21.2.1",
     "nodemon": "^1.12.1",
     "pm2": "^2.7.2",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "compression": "^1.7.1",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-hot-loader": "next"
   }
 }
